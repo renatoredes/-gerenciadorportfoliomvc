@@ -17,6 +17,5 @@ Tecnologia Utilizadas:
 ## Execulte 
 * mvn clean install
 * execulte o projeto será criado as tabelas automaticamente
-</br>
-</br>
+
 ![image](https://user-images.githubusercontent.com/18330802/233441599-46ffca74-dfee-4d68-9dc4-34aabb9570d7.png)
