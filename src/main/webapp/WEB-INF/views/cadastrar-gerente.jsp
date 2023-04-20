@@ -20,7 +20,7 @@
             </c:if>
 
 			<div class="row">
-				<div class="col">
+				<div class="col-4">
 					<div class="form-group">
 						<label for="nome">Nome Gerente</label> <input type="text"
 							class="form-control" id="nomeGerente" name="nome"

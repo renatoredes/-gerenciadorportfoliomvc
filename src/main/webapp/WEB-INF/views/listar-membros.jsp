@@ -31,7 +31,7 @@
 							<td class="table-plus">${membro.id}</td>
 							<td class="table-plus">${membro.nome}</td>
 							<td class="table-plus">${membro.atribuicao}</td>
-							<td class="table-plus">${membro.projeto}</td>
+							<td class="table-plus">${membro.projeto.nome}</td>
                             <td class="table-plus">
                                 <form:form method="POST" action="/demo/membros/remover/{membro.id}">
                                     <button type="submit" value="excluir" class="btn btn-primary">

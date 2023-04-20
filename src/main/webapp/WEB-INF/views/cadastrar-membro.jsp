@@ -24,7 +24,7 @@
                 </c:if>
 
 			<div class="row">
-				<div class="col">
+				<div class="col-4">
 					<div class="form-group">
 						<label for="nome">Nome Membro</label> <input type="text"
 							class="form-control" id="nomeMembro" name="nome"
@@ -36,7 +36,7 @@
                     		placeholder="Informe a atribuição do membro">
                     </div>
                     <div class="form-group">
-
+                            <label for="projeto">Projetos</label>
                             <form:select path="idProjetoSelecionado" class="form-control" id="projeto" name="projeto">
                                   <c:forEach items="${projetos}" var="projetoAux">
                                     <form:option value="${projetoAux.id}">${projetoAux.nome}</form:option>
