@@ -1,1 +1,2 @@
-# Gerenciar os dados do portfólio de projetos de uma empresa.
+# gerenciadorportfolio-
+sistema para gerenciar os dados do portfólio 
