@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.jws.WebParam;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -34,10 +35,17 @@ public class MembroController {
     }
 
     @GetMapping("/listar")
-    public String listarMembrosPorProjeto(Model model) {
-        List<Membro> lista = membroService.listarMembrosPorProjeto(1L);
+    public String listarTodosMembros(Model model){
+        List<Membro> lista = this.membroService.listarTodosMembros();
         model.addAttribute("membros", lista);
         return "listar-membros";
+    }
+
+    @GetMapping("/listar/{projetoId}")
+    public String listarMembrosPorProjeto(@PathVariable Long projetoId, RedirectAttributes attributes) {
+        List<Membro> lista = membroService.listarMembrosPorProjeto(projetoId);
+        attributes.addFlashAttribute("membros", lista);
+        return "redirect:/membros/listar";
     }
 
     @GetMapping("/novo")
@@ -81,10 +89,12 @@ public class MembroController {
         return ResponseEntity.ok(membroAtualizado);
     }
 
-    @DeleteMapping("/remover/{id}")
-    public ResponseEntity<Void> excluirMembro(@PathVariable Long projetoId, @PathVariable Long membroId) {
+    @PostMapping("/remover/{id}")
+    public String excluirMembro(RedirectAttributes attributes, @PathVariable Long membroId) {
         membroService.excluirMembro(membroId);
-        return ResponseEntity.noContent().build();
+        List<Membro> lista = this.membroService.listarTodosMembros();
+        attributes.addFlashAttribute("membros", lista);
+        return "redirect:/membros/listar";
     }
 }
 

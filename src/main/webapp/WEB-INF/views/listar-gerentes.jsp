@@ -30,7 +30,9 @@
 							<td class="table-plus">${gerente.nome}</td>
                             <td class="table-plus">
                                 <form:form method="POST" action="/demo/gerentes/remover/${gerente.id}">
-                                    <button type="submit" value="excluir" class="btn btn-primary"></button>
+                                    <button type="submit" value="excluir" class="btn btn-primary">
+                                        <i id="boot-icon" class="bi bi-trash"></i>
+                                    </button>
                                 </form:form>
                             </td>
 						</tr>

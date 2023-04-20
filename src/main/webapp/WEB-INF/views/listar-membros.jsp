@@ -33,8 +33,10 @@
 							<td class="table-plus">${membro.atribuicao}</td>
 							<td class="table-plus">${membro.projeto}</td>
                             <td class="table-plus">
-                                <form:form method="POST" action="/demo/membros/{membro.projeto}/membros/remover/{membro.id}">
-                                    <button type="submit" value="excluir" class="btn btn-primary"></button>
+                                <form:form method="POST" action="/demo/membros/remover/{membro.id}">
+                                    <button type="submit" value="excluir" class="btn btn-primary">
+                                         <i id="boot-icon" class="bi bi-trash"></i>
+                                     </button>
                                 </form:form>
                             </td>
 						</tr>

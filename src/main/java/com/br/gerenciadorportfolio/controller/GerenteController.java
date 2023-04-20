@@ -78,10 +78,12 @@ public class GerenteController {
         }
     }
 
-    @DeleteMapping("/remover/{id}")
-    public String excluirGerente(@PathVariable Long id) {
-        gerenteService.excluirGerente(id);
-        return "listar-gerentes";
+    @PostMapping("/remover/{id}")
+    public String excluirGerente(@PathVariable Long id, RedirectAttributes attributes) {
+        this.gerenteService.excluirGerente(id);
+        List<Gerente> lista = this.gerenteService.listarGerentes();
+        attributes.addFlashAttribute("gerentes", lista);
+        return "redirect:/gerentes/listar";
     }
 
 }

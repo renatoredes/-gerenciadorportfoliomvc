@@ -10,7 +10,7 @@
 
 	<div class="container mt-3">
 
-		<h1>Cadastrar Gerente</h1>
+		<h1>Cadastrar Membro</h1>
 		<form:form method="POST" action="/demo/membros/salvar" modelAttribute="membroRequest">
 
                  <c:if test="${resultado.equals('sucesso')}">

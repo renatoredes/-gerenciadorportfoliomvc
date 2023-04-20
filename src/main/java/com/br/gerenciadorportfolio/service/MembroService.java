@@ -51,5 +51,10 @@ public class MembroService {
         return membroRepository.findByProjetoId(projetoId);
     }
 
+    @Transactional(readOnly = true)
+    public List<Membro> listarTodosMembros(){
+        return this.membroRepository.findAll();
+    }
+
 
 }
